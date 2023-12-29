@@ -1,2 +1,3 @@
-# lydia-portfolio
-Lydia's portfolio website
+# Lydia-Portfolio
+안녕하세요. 프론트엔드 개발자 리디아입니다.
+저를 소개하는 포트폴리오 웹 페이지입니다.
