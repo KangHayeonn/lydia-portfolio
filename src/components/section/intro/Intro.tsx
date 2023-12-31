@@ -8,7 +8,7 @@ import useTypingWords from "@/hooks/useTypingWords";
 const Intro = () => {
   const typing = useTypingWords({
     completeWords: introWords,
-    delay: 150,
+    delay: 100,
   });
 
   return (
