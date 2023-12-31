@@ -1,4 +1,4 @@
 export interface ITypingWords {
-  completeWords: string;
+  completeWords: Array<string>;
   delay: number;
 }

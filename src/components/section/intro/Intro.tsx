@@ -1,18 +1,22 @@
+"use client";
+
 import React from "react";
 import Mountain from "@/components/section/intro/Mountain";
 import { introWords } from "@/constants";
+import useTypingWords from "@/hooks/useTypingWords";
 
 const Intro = () => {
+  const typing = useTypingWords({
+    completeWords: introWords,
+    delay: 150,
+  });
+
   return (
     <section id="intro">
       <div className="intro__inner">
         <h2 className="intro__title">intro</h2>
         <div className="intro__text">
-          {introWords.map((word, key) => (
-            <span key={`intro${key}`} className="intro__text--typing">
-              {word}
-            </span>
-          ))}
+          <span className="intro__text--typing">{typing}</span>
         </div>
       </div>
       <Mountain />
