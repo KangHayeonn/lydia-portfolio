@@ -13,9 +13,9 @@ const Mountain = () => {
     if (!canvas || !ctx) return;
 
     const hills = [
-      new Hill("#DFFFD8", 0.5, 12),
-      new Hill("#B5F1CC", 1.5, 8),
-      new Hill("#95DAC1", 2.5, 6),
+      new Hill("#d2c4fc", 0.5, 12),
+      new Hill("#b7a1f7", 1.5, 8),
+      new Hill("#906ff3", 2.5, 6),
     ];
 
     const handleResize = () => {

@@ -9,7 +9,9 @@ const Intro = () => {
         <h2 className="intro__title">intro</h2>
         <div className="intro__text">
           {introWords.map((word, key) => (
-            <span key={`intro${key}`}>{word}</span>
+            <span key={`intro${key}`} className="intro__text--typing">
+              {word}
+            </span>
           ))}
         </div>
       </div>
