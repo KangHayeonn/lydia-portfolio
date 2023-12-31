@@ -26,3 +26,11 @@ export const headerMenu: Array<IHeaderMenu> = [
     url: "#contact",
   },
 ];
+
+export const introWords: Array<string> = [
+  "안녕하세요",
+  "고객의 관점에서 고민하고",
+  "현재에 안주하지 않고",
+  "더 나은 방식을 연구하는",
+  "프론트엔드 개발자 강하연 입니다.",
+];
