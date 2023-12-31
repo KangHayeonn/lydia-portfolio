@@ -1,0 +1,114 @@
+#about {
+    min-height: calc(100vh - 80px);
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.about {
+    &__inner {
+    }
+
+    &__title {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 7rem;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        li {
+            width: 30vw;
+            font-size: 1.8rem;
+            line-height: 3rem;
+            margin: 2rem 8rem 4rem 8rem;
+        }
+
+        .strong {
+            font-size: 2.1rem;
+            font-weight: 800;
+        }
+
+        .underline {
+            background-image: linear-gradient(90deg, var(--primary300), var(--primary));
+            background-position: bottom;
+            background-size: 100% 30%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__card-container {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__card-box {
+        width: 300px;
+        min-width: 200px;
+        height: 120px;
+        margin: 1.2rem;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        transition: transform 0.3s ease
+    }
+
+    &__card-box:hover {
+        transform: scale(1.1);
+    }
+
+    &__card-content {
+        display: flex;
+        padding: 26px;
+
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 21px;
+            align-self: center;
+        }
+
+        .text-box {
+            line-height: 1.2rem;
+            word-break: break-word;
+
+            &__type {
+                font-weight: 800;
+                font-size: 0.9rem;
+            }
+
+            &__content {
+
+            }
+        }
+    }
+}
