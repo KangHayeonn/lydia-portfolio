@@ -1,0 +1,125 @@
+#skill {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.skill {
+    &__inner {
+    }
+
+    &__title {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &__content{
+        font-family: 'SUIT-Regular';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: auto;
+        width: 70vw;
+        height: 86vh;
+        transition: 1.2s;
+
+        .frontend {
+            position: absolute;
+            left: 40vw;
+            top: 37vh;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            transition: 1.2s;
+          }
+          .backend {
+            position: absolute;
+            // left: ${({ openStack }) => (openStack.backend ? '40vw' : '0vw')};
+            //top: ${({ openStack }) => (openStack.backend ? '37vh' : '37vh')};
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.2s;
+          }
+          .etc {
+            position: absolute;
+           //left: ${({ openStack }) => (openStack.etc ? '40vw' : '0vw')};
+            //top: ${({ openStack }) => (openStack.etc ? '37vh' : '58vh')};
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.2s;
+            position: absolute;
+          }
+    }
+
+    &-circle {
+        background-color: var(--white);
+        position: absolute;
+        top: 12%;
+        left: 12%;
+        z-index: 10;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+}
+
+.circle-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1.2s; 
+}
+
+.progress {
+    position: relative;
+
+    &__inner {
+        width: 120px;
+        height: 120px;
+        transform: rotate(-90deg);
+    }
+
+    &__text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        text-align: center;
+        color: var(--black200);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 120px;
+        transform: rotate(90deg);
+    }
+
+    &__svg {
+        width: 120px;
+        height: 120px;
+
+        .frame {
+            fill: var(--white);
+            stroke: var(--black500);
+          }
+
+          .bar {
+            fill: transparent;
+            stroke: url(#gradient);
+            stroke-linecap: round;
+            stroke-dashoffset: var(--strokeOffset);
+            stroke-dasharray: var(--strokeArray);
+            transition: 1.8s ease-in-out;
+          }
+
+          .animate {
+            stroke-dashoffset: var(--strokeOffset);
+          }
+    }
+}

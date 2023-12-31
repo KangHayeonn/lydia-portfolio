@@ -85,6 +85,10 @@
 
     &__card-box:hover {
         transform: scale(1.1);
+
+        .icon {
+            font-size: 1.7rem;
+        }
     }
 
     &__card-content {
@@ -102,12 +106,12 @@
             word-break: break-word;
 
             &__type {
-                font-weight: 800;
-                font-size: 0.9rem;
+                font-weight: 600;
+                font-size: 1.05rem;
             }
 
             &__content {
-
+                font-size: 1.05rem;
             }
         }
     }
