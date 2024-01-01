@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IProgressCircle } from "@/types/skill";
 import { RADIUS, CIRCUMFERENCE } from "@/constants/skills";
 
 const ProgressCircle = ({ value, name, type, open }: IProgressCircle) => {
   const strokeOffset = name ? CIRCUMFERENCE * (1 - value / 100) : CIRCUMFERENCE;
-  const barElement = document.querySelector(`.${type} .bar`) as SVGElement;
-  if (barElement) {
-    barElement.style.strokeDashoffset = `${strokeOffset}`;
-    barElement.style.strokeDasharray = `${CIRCUMFERENCE}`;
-  }
 
-  if (open) {
-    const animateElement = document.querySelector(
-      `.${type} .animate`,
-    ) as SVGElement;
-
-    if (animateElement) {
-      animateElement.style.strokeDashoffset = `${
-        CIRCUMFERENCE * (1 - value / 100)
-      }`;
+  useEffect(() => {
+    const barElement = document.querySelector(`.${type} .bar`) as SVGElement;
+    if (barElement) {
+      barElement.style.strokeDashoffset = `${strokeOffset}`;
+      barElement.style.strokeDasharray = `${CIRCUMFERENCE}`;
     }
-  }
+
+    if (open) {
+      const animateElement = document.querySelector(
+        `.${type} .animate`,
+      ) as SVGElement;
+
+      if (animateElement) {
+        animateElement.style.strokeDashoffset = `${
+          CIRCUMFERENCE * (1 - value / 100)
+        }`;
+      }
+    }
+  }, [open, strokeOffset, type, value]);
 
   return (
     <div className="progress">
