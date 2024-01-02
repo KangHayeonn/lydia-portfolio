@@ -44,16 +44,16 @@ export const profile: Array<IProfile> = [
   {
     icon: MdEmail,
     type: "EMAIL",
-    content: "-",
+    content: `${process.env.NEXT_PUBLIC_EMAIL}`,
   },
   {
     icon: FaGithub,
     type: "GITHUB",
-    content: "-",
+    content: `${process.env.NEXT_PUBLIC_GITHUB}`,
   },
   {
     icon: SiTistory,
     type: "BLOG",
-    content: "-",
+    content: `${process.env.NEXT_PUBLIC_BLOG}`,
   },
 ];
