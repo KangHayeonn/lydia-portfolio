@@ -1,0 +1,274 @@
+#skill {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+.skill {
+    &__inner {
+    }
+
+    &__title {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &__content{
+        font-family: 'SUIT-Regular';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: auto;
+        width: 70vw;
+        height: 86vh;
+        transition: 1.2s;
+
+        .frontend {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.2s;
+          }
+          .backend {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.2s;
+          }
+          .etc {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.2s;
+            position: absolute;
+          }
+    }
+
+    &-circle {
+        background-color: var(--white);
+        position: absolute;
+        top: 12%;
+        left: 12%;
+        z-index: 10;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+}
+
+.circle-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1.2s; 
+}
+
+.progress {
+    position: relative;
+
+    &__inner {
+        width: 120px;
+        height: 120px;
+        transform: rotate(-90deg);
+    }
+
+    &__text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        text-align: center;
+        color: var(--black200);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 120px;
+        transform: rotate(90deg);
+    }
+
+    &__svg {
+        width: 120px;
+        height: 120px;
+
+        .frame {
+            fill: var(--white);
+            stroke: var(--black500);
+          }
+
+          .bar {
+            fill: transparent;
+            stroke: url(#gradient);
+            stroke-linecap: round;
+            stroke-dashoffset: var(--strokeOffset);
+            stroke-dasharray: var(--strokeArray);
+            transition: 1.8s ease-in-out;
+          }
+
+          .animate {
+            stroke-dashoffset: var(--strokeOffset);
+          }
+    }
+}
+
+.skills {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.skill-detail {
+  font-family: 'SUIT-Regular';
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+
+    position: absolute;
+    width: 200px;
+    min-height: 150px;
+    padding-top: 10px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-17%, -10%);
+
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+
+    z-index: 10;
+  }
+
+  &__name {
+    width: fit-content;
+    background-color: var(--white100);
+    border-radius: 12px;
+    margin: 0rem 1rem;
+    padding: 0.2rem 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  &__content {
+    margin: 0.7rem 1.5rem 1rem;
+    word-break: keep-all;
+    line-height: 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+// skill detail icon
+.bg-react {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/react.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-next {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/nextjs.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-typescript {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/typescript.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-redux {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/redux.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-recoil {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/recoil.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-query {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/reactquery.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-emotion {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/emotion.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-vue {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/vue.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-java {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/java.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-mysql {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/mysql.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-github {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/github.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-github-actions {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/github-actions.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-vercel {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/vercel.svg') no-repeat center;
+  background-size: contain;
+}
+
+.bg-aws {
+  width: 65px;
+  height: 65px;
+  background: url('/skillIcon/amazonaws.svg') no-repeat center;
+  background-size: contain;
+}

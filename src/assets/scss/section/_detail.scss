@@ -1,0 +1,124 @@
+#detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 99vw;
+    padding: 84px 0;
+}
+
+.detail {
+    &__inner {
+    }
+
+    &__title {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 84px;
+    }
+}
+
+.detail-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 400px;
+
+    .image {
+        min-width: 200px;
+        border-radius: 3%;
+    }
+
+    &__name {
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--black);
+    }
+
+    &__box {
+        line-height: 1.4rem;
+        margin-top: 2rem;
+
+        p:nth-child(2) {
+            display: inline;
+            color: var(--black200);
+        }
+
+        div:nth-child(3) {
+            padding-top: 1.4rem;
+        }
+
+        .title {
+            width: fit-content;
+            background-color: var(--white100);
+            border-radius: 10px;
+            padding: 0 6px;
+            margin: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .link {
+            text-decoration: none;
+            word-break: break-all;
+            text-decoration: none;
+            color: var(--black300);
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.detail-content {
+    width: 40vw;
+    margin-left: 5rem;  
+    color: var(--black200);
+    word-break: break-all;
+
+    &__intro {
+        &--title {
+            margin: 2rem 0 0.8rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--black);
+            width: fit-content;
+            background-image: linear-gradient(90deg, var(--primary300), var(--primary));
+            background-position: bottom;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+        }
+
+        &--content {
+            margin-bottom: 0.6rem;
+            line-height: 1.4rem;
+        }
+    }
+
+    &__info {
+        margin-top: 1.8rem;
+
+        &--title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 0.8rem 0;
+            width: fit-content;
+
+            background-image: linear-gradient(90deg, var(--primary300), var(--primary));
+            background-position: bottom;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+        }
+
+        &--content {
+        }
+    }
+}
