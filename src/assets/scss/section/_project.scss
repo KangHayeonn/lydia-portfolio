@@ -1,0 +1,134 @@
+#project {
+    position: relative;
+    height: fit-content;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background: linear-gradient(0deg, var(--white) 0%, var(--primary) 60%, var(--primary200) 100%);
+  
+    .button {
+      margin-top: -13vh;
+    }
+}
+
+.project {
+    &__inner {
+
+    }
+
+    &__title {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 99vw;
+        height: 100vh;
+        transition: transform 200ms;
+    }
+}
+
+.card {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .text {
+            font-size: 0.9rem;
+            margin: -1rem 0 36px 0;
+            color: var(--black300);
+            position: relative;
+        }
+        .strong {
+            font-size: 1.2rem;
+            position: absolute;
+            animation: bounce 0.5s ease-in-out infinite;
+            margin-left: -36px;
+        }
+        @keyframes bounce {
+            0% {
+            transform: translate(0, -6px) ; 
+            }
+            50% {
+            transform: translate(0, -12px) ; 
+            }
+            100% {
+            transform: translate(0, -6px) ; 
+            }
+        }
+    }
+
+    &__box-container {
+        display: flex;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__contents {
+        position: relative;
+        width: 310px;
+        height: 480px;
+        margin: 0 3vw;
+        border-radius: 3%;
+        background-color: var(--white);
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👀</text></svg>") 16 0, auto;
+        padding-bottom: 20px;
+
+        .image {
+            border-radius: 3% 3% 50% 50%;
+        }
+        
+        .title {
+            padding: 0.9rem 1.4rem 0.7rem;
+        
+            h6 {
+              display: inline;
+              font-size: 1.7rem;
+              font-weight: 800;
+              margin-right: 8px; 
+              color: var(--black100);
+            }
+            p {
+              display: inline;
+              color: var(--black200);
+            }
+        }
+        
+        .content {
+            padding: 0 1.4rem;
+            
+            .sub-title {
+              font-size: 0.9rem;
+              background-color: var(--white100);
+              width:fit-content;
+              padding: 3px 8px;
+              margin-bottom: 6px;
+              border-radius: 10px;
+            }
+            
+            p {
+              font-size: 0.93rem;
+              line-height: 1.2rem;
+              color: var(--black300);
+              margin-bottom: 0.8rem;
+            }
+
+            .stack {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
