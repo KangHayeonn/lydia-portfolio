@@ -25,10 +25,6 @@ export const headerMenu: Array<IHeaderMenu> = [
     title: "project",
     url: "#project",
   },
-  {
-    title: "contact",
-    url: "#contact",
-  },
 ];
 
 export const introWords: Array<string> = [

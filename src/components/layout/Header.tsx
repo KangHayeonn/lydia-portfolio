@@ -2,9 +2,12 @@
 
 import React, { useState } from "react";
 import { headerMenu } from "@/constants";
+import { useMoveToSection } from "@/hooks/useMoveToSection";
 
 const Header = () => {
   const [show, setShow] = useState<boolean>(false);
+
+  const { handleMove } = useMoveToSection();
 
   const toggleMenu = () => {
     setShow((prevShow) => !prevShow);
@@ -27,8 +30,8 @@ const Header = () => {
         >
           <ul>
             {headerMenu.map((nav, key) => (
-              <li key={key}>
-                <a href={nav.url}>{nav.title}</a>
+              <li key={key} onClick={() => handleMove(`${nav.title}`)}>
+                <span>{nav.title}</span>
               </li>
             ))}
           </ul>
