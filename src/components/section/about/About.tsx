@@ -1,7 +1,13 @@
+"use client";
+
 import React from "react";
+import SubButton from "@/components/common/SubButton";
 import { profile } from "@/constants";
+import { useMoveToSection } from "@/hooks/useMoveToSection";
 
 const About = () => {
+  const { handleMove } = useMoveToSection();
+
   return (
     <section id="about">
       <div className="about__inner">
@@ -61,6 +67,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <SubButton onClick={() => handleMove("skill")} />
     </section>
   );
 };
