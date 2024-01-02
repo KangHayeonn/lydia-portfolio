@@ -3,9 +3,13 @@
 import React from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItems from "@/components/section/timeline/CareerItems";
+import SubButton from "@/components/common/SubButton";
 import { TimelineData } from "@/constants/timeline";
+import { useMoveToSection } from "@/hooks/useMoveToSection";
 
 const Career = () => {
+  const { handleMove } = useMoveToSection();
+
   return (
     <section id="timeline">
       <div className="timeline__inner">
@@ -22,6 +26,9 @@ const Career = () => {
             ))}
           </Timeline>
         </div>
+      </div>
+      <div className="button">
+        <SubButton onClick={() => handleMove("project")} />
       </div>
     </section>
   );

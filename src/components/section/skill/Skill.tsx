@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import ProgressCircle from "@/components/section/skill/ProgressCircle";
+import SubButton from "@/components/common/SubButton";
 import { skills } from "@/constants/skills";
 import { ISkillSet, ISkills, IOpenSkillSet, ISkillDetail } from "@/types/skill";
-import { useInView } from "react-intersection-observer";
+import { useMoveToSection } from "@/hooks/useMoveToSection";
 
 const Skill = () => {
   const [openSkillSet, setOpenSkillSet] = useState<IOpenSkillSet>({
@@ -19,6 +21,8 @@ const Skill = () => {
     content: "",
   });
   const [openSkillDetail, setOpenSkillDetail] = useState<boolean>(false);
+
+  const { handleMove } = useMoveToSection();
 
   const handleOpenSkillSet = (skillSetType: string) => {
     setOpenSkillSet((prevState) => ({
@@ -163,6 +167,9 @@ const Skill = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="button">
+        <SubButton onClick={() => handleMove("timeline")} />
       </div>
     </section>
   );

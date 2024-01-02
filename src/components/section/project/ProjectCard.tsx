@@ -2,8 +2,16 @@ import React from "react";
 import { projects } from "@/constants/project";
 import Image from "next/image";
 import { IProjectCard } from "@/types/project";
+import { useMoveToSection } from "@/hooks/useMoveToSection";
 
 const ProjectCard = ({ handleDetail }: IProjectCard) => {
+  const { handleMove } = useMoveToSection();
+
+  const clickProjectCard = (idx?: number) => {
+    handleDetail(idx);
+    handleMove("detail");
+  };
+
   return (
     <div className="card__inner">
       <p className="text">
@@ -15,7 +23,7 @@ const ProjectCard = ({ handleDetail }: IProjectCard) => {
           <div
             key={`project${idx}`}
             className="card__box"
-            onClick={() => handleDetail(idx)}
+            onClick={() => clickProjectCard(idx)}
           >
             <div className="card__contents">
               <div className="card__contents--light" />
