@@ -4,7 +4,7 @@ import Intro from "@/components/section/intro/Intro";
 import About from "@/components/section/about/About";
 import Skill from "@/components/section/skill/Skill";
 import Timeline from "@/components/section/timeline/Career";
-import Contact from "@/components/section/contact/Contact";
+import Project from "@/components/section/project/Project";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         <About />
         <Skill />
         <Timeline />
-        <Contact />
+        <Project />
       </main>
       <Footer />
     </>
