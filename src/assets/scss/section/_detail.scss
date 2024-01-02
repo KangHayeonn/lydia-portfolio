@@ -4,9 +4,7 @@
     justify-content: space-around;
     align-items: center;
     width: 99vw;
-    height: calc(100vh - 84px);
-    padding-top: 84px;
-    padding-bottom: 84px;
+    padding: 84px 0;
 }
 
 .detail {
@@ -23,6 +21,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 84px;
     }
 }
 
