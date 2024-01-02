@@ -1,8 +1,9 @@
 import React from "react";
 import { projects } from "@/constants/project";
 import Image from "next/image";
+import { IProjectCard } from "@/types/project";
 
-const ProjectCard = () => {
+const ProjectCard = ({ handleDetail }: IProjectCard) => {
   return (
     <div className="card__inner">
       <p className="text">
@@ -11,7 +12,11 @@ const ProjectCard = () => {
       </p>
       <div className="card__box-container">
         {projects.map((ele, idx) => (
-          <div key={`project${idx}`} className="card__box">
+          <div
+            key={`project${idx}`}
+            className="card__box"
+            onClick={() => handleDetail(idx)}
+          >
             <div className="card__contents">
               <div className="card__contents--light" />
               <Image

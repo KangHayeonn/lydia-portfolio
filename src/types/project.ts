@@ -30,3 +30,11 @@ export interface IProjects {
   mainImage: string;
   image: Array<string>;
 }
+
+export interface IProjectDetail {
+  data: IProjects;
+}
+
+export interface IProjectCard {
+  handleDetail: (idx?: number) => void;
+}
