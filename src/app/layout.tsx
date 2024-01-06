@@ -1,4 +1,5 @@
 import "@/assets/scss/style.scss";
+import MSWComponent from "@/mocks/MSWComponent";
 
 export const metadata = {
   title: "Lydia Portfolio",
@@ -31,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-      <body>{children}</body>
+      <body>
+        <MSWComponent>{children}</MSWComponent>
+      </body>
     </html>
   );
 }
