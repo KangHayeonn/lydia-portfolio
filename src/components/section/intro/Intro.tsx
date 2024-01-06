@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Mountain from "@/components/section/intro/Mountain";
 import { introWords } from "@/constants";
 import useTypingWords from "@/hooks/useTypingWords";
 import Api from "@/api/remotes";
 
 const Intro = () => {
+  const [words, setWords] = useState<Array<string>>(introWords);
   const typing = useTypingWords({
-    completeWords: introWords,
+    completeWords: words,
     delay: 100,
   });
 
   const getIntro = async () => {
-    await Api.v1GetIntro()
-      .then((res) => console.log(res))
+    const data = await Api.v1GetIntro()
+      .then((res) => res.data)
       .catch((err) => err);
+    setWords(data);
   };
 
   useEffect(() => {

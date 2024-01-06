@@ -1,14 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItems from "@/components/section/timeline/CareerItems";
 import SubButton from "@/components/common/SubButton";
 import { TimelineData } from "@/constants/timeline";
 import { useMoveToSection } from "@/hooks/useMoveToSection";
+import Api from "@/api/remotes";
+import { ITimelineData } from "@/types/timeline";
 
 const Career = () => {
+  const [timeline, setTimeline] = useState<Array<ITimelineData>>(TimelineData);
   const { handleMove } = useMoveToSection();
+
+  const getTimeLine = async () => {
+    const data = await Api.v1GetTimeLine()
+      .then((res) => res.data)
+      .catch((err) => err);
+    setTimeline(data);
+  };
+
+  useEffect(() => {
+    getTimeLine();
+  }, []);
 
   return (
     <section id="timeline">

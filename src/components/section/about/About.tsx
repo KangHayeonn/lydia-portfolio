@@ -1,12 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SubButton from "@/components/common/SubButton";
 import { profile } from "@/constants";
 import { useMoveToSection } from "@/hooks/useMoveToSection";
+import { IProfile } from "@/types/profile";
+import Api from "@/api/remotes";
 
 const About = () => {
+  const [profileInfo, setProfileInfo] = useState<Array<IProfile>>(profile);
   const { handleMove } = useMoveToSection();
+
+  const getProfile = async () => {
+    const data = await Api.v1GetProfile()
+      .then((res) => res.data)
+      .catch((err) => err);
+    setProfileInfo(data);
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
   return (
     <section id="about">

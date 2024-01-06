@@ -7,6 +7,7 @@ import SubButton from "@/components/common/SubButton";
 import { skills } from "@/constants/skills";
 import { ISkillSet, ISkills, IOpenSkillSet, ISkillDetail } from "@/types/skill";
 import { useMoveToSection } from "@/hooks/useMoveToSection";
+import Api from "@/api/remotes";
 
 const Skill = () => {
   const [openSkillSet, setOpenSkillSet] = useState<IOpenSkillSet>({
@@ -21,6 +22,7 @@ const Skill = () => {
     content: "",
   });
   const [openSkillDetail, setOpenSkillDetail] = useState<boolean>(false);
+  const [skillList, setSkillList] = useState<Array<ISkills>>(skills);
 
   const { handleMove } = useMoveToSection();
 
@@ -99,10 +101,19 @@ const Skill = () => {
     trackVisibility: true,
   });
 
+  const getSkills = async () => {
+    const data = await Api.v1GetSkills()
+      .then((res) => res.data)
+      .catch((err) => err);
+    setSkillList(data);
+  };
+
   useEffect(() => {
     if (inView) {
       handleOpenSkillSet(lastOpenSkillSet);
     }
+
+    getSkills();
 
     return () => {
       setOpenSkillSet({
@@ -118,7 +129,7 @@ const Skill = () => {
       <div className="skill__inner">
         <h2 className="skill__title">skill</h2>
         <div className="skill__content" ref={skillRef}>
-          {skills.map((skillSet, key) => (
+          {skillList.map((skillSet, key) => (
             <div
               key={`skillSet${key}`}
               className={`${skillSet.type}`}

@@ -11,7 +11,7 @@ import initMocks from "@/mocks";
 export default async function Home() {
   await initMocks();
   const dynamicData = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/intro`,
     { cache: "force-cache" },
   ).then((res) => res.json());
   // const data = await dynamicData.json();
